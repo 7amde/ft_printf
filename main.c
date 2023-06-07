@@ -6,7 +6,7 @@
 /*   By: ahmalman <ahmalman@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 19:45:18 by ahmalman          #+#    #+#             */
-/*   Updated: 2023/06/07 20:54:24 by ahmalman         ###   ########.fr       */
+/*   Updated: 2023/06/07 22:22:21 by ahmalman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,24 @@ int	ft_putchar_fd(char c)
 {
 	write(1, &c, 1);
 	return(1);
+}
+
+int ft_putunbr(unsigned int u)
+{	
+	int	bl;
+
+	bl = 0;
+
+	if (u > 9)
+	{
+		bl = bl + ft_putunbr(u / 10);
+		bl = bl + ft_putunbr(u % 10);
+	}
+	else
+	{
+		bl = bl + ft_putchar_fd(u + 48);
+	}
+	return(bl);
 }
 
 int	ft_putnbr_fd(int n)
@@ -87,6 +105,8 @@ int	ft_printf(char *str, ...)
 				x = x + ft_putstr_fd(va_arg(ptr, char *));
 			else if (str[i] == 'd' || str[i] == 'i')
 				x = x + ft_putnbr_fd(va_arg(ptr , int));
+			else if (str[i] == 'u')
+				x = x + ft_putunbr(va_arg(ptr, unsigned int));
 		 }
 		else
 			x = x + ft_putchar_fd(str[i]);
@@ -106,10 +126,11 @@ int main (void)
 	a = -5;
 	b = 'c';
 	s = "yujgt";
+	int u = -2;
 
 
 	// int num = printf("[%d]  [%c]\n",a, b);
-	ft_printf("%c %d %s\n", b, a ,s);
+	ft_printf("%c %d %s %u\n", b, a ,s, u);
 
 	// ft_printf();
 }
