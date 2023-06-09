@@ -24,6 +24,6 @@ int hugehex(unsigned int h);
 int nurmhex(unsigned long t);
 int ft_putunbr(unsigned int u);
 int	ft_putnbr(int n);
-int	ft_printf(char *str, ...);
+int	ft_printf(const char *str, ...);
 
 #endif

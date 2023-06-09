@@ -6,7 +6,7 @@
 /*   By: ahmalman <ahmalman@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 19:57:51 by ahmalman          #+#    #+#             */
-/*   Updated: 2023/06/09 20:00:57 by ahmalman         ###   ########.fr       */
+/*   Updated: 2023/06/09 22:44:02 by ahmalman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,12 @@ int ft_putstr(char *str)
 {
 	int	a;
 
+	a = 0;
+	if (!str)
+	{
+		a = ft_putstr("(null)");
+		return (a);
+	}
 	a = ft_strlen(str);
 	write(1, str, a);
 	return(a);
@@ -63,7 +69,7 @@ int	ft_putnbr(int n)
 	{
 		bl = bl + ft_putchar('-');
 		n = -n;
-		ft_putnbr(n);
+		bl  = bl + ft_putnbr(n);
 	}
 	else if (n > 9)
 	{

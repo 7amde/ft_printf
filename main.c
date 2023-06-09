@@ -14,5 +14,7 @@ int main (void)
 	ft_printf("%c %d %s %u %% %p\n", b, a ,s, u, 42069);
 	printf("%c %d %s %u %% %p\n", b, a ,s, u, 42069);
 
-
+	// char *s = NULL;
+	// printf("%s\n", s);
+	// ft_printf("%s\n", s);
 }

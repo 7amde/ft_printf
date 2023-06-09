@@ -6,11 +6,11 @@
 #    By: ahmalman <ahmalman@student.42abudhabi.a    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/27 20:31:34 by ahmalman          #+#    #+#              #
-#    Updated: 2023/06/09 20:17:11 by ahmalman         ###   ########.fr        #
+#    Updated: 2023/06/09 22:33:20 by ahmalman         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS			=	printers.c hexmakers.c typingcenter.c
+SRCS			 = printers.c hexmakers.c typingcenter.c
 
 OBJS			= $(SRCS:.c=.o)
 
